@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>LED Controller</title>
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+	</head>
+	<body>
+		<style type="text/css">
+		body{
+			background-color: black;
+		}
+		.col1, .col2, .col3, .col4{
+			width: 220px;
+			float: left;
+			margin: 10px;
+		}
+		.status{
+			float: left;
+			margin-top: 300px;
+			margin-left: -250px;
+			size: 100%;
+		}
+		</style>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script>
+	function restartall(){
+		$('#text').append('hello');
+	}
+	function refresh(){
+		document.location.reload();
+		restartall();
+	}
+</script>
+
+<div class="col1">
+
+<script type="text/javascript">
+	
+	function red(){
+		$.get("red.php");
+		return false;
+	}
+	
+</script>
+<a href="javascript:refresh();" onclick="red();">
+	<img src="buttons/red.png" border="0">
+</a><br>
+
+<script type="text/javascript">
+	
+	function green(){
+		$.get("green.php");
+		return false;
+	}
+	
+</script>
+<a href="javascript:refresh();" onclick="green();">
+	<img src="buttons/green.png" border="0">
+</a><br>
+
+<script type="text/javascript">
+	
+	function blue(){
+		$.get("blue.php");
+		return false;
+	}
+	
+</script>
+<a href="javascript:refresh();" onclick="blue();">
+	<img src="buttons/blue.png" border="0">
+	
+</a><br>
+
+<script type="text/javascript">
+	
+	function off(){
+		$.get("off.php");
+		return false;
+	}
+	
+</script>
+<a href="javascript:refresh();" onclick="off();">
+	<img src="buttons/off.png" border="0">
+</a><br>
+</div>
+
+<div class="col2">
+<script type="text/javascript">
+	
+	function magenta(){
+		$.get("magenta.php");
+		return false;
+	}
+	
+</script>
+<a href="javascript:refresh();" onclick="magenta();">
+	<img src="buttons/magenta.png" border="0">
+</a><br>
+
+<script type="text/javascript">
+	
+	function yellow(){
+		$.get("yellow.php");
+		return false;
+	}
+	
+</script>
+<a href="javascript:refresh();" onclick="yellow();">
+	<img src="buttons/yellow.png" border="0">
+</a><br>
+
+<script type="text/javascript">
+	
+	function cyan(){
+		$.get("cyan.php");
+		return false;
+	}
+	
+</script>
+<a href="javascript:refresh();" onclick="cyan();"">
+	<img src="buttons/cyan.png" border="0">
+</a><br>
+
+<script type="text/javascript">
+	
+	function white(){
+		$.get("white.php");
+		return false;
+	}
+	
+</script>
+<a href="javascript:refresh();" onclick="white();">
+	<img src="buttons/white.png" border="0">
+</a><br>
+</div>
+
+<div class="col3">
+
+<script type="text/javascript">
+	function subRed(){
+		$.get("subRed.php");
+		return false;
+	}	
+</script>
+<a href="javascript:refresh();" onclick="subRed();">
+	<img src="buttons/subRed.png" border="0">
+</a><br>
+
+<script type="text/javascript">
+    function subGreen(){
+        $.get("subGreen.php");
+        return false;
+    }
+</script>
+<a href="javascript:refresh();" onclick="subGreen();">
+    <img src="buttons/subGreen.png" border="0">
+</a><br>
+
+<script type="text/javascript">
+    function subBlue(){
+        $.get("subBlue.php");
+        return false;
+    }
+</script>
+<a href="javascript:refresh();" onclick="subBlue();">
+    <img src="buttons/subBlue.png" border="0">
+</a><br>
+
+</div>
+
+<div class="col4">
+
+<script type="text/javascript">
+    function addRed(){
+        $.get("addRed.php");
+        return false;
+    }
+</script>
+<a href="javascript:refresh();" onclick="addRed();">
+    <img src="buttons/addRed.png" border="0">
+</a><br>
+
+<script type="text/javascript">
+    function addGreen(){
+        $.get("addGreen.php");
+        return false;
+    }
+</script>
+<a href="javascript:refresh();" onclick="addGreen();">
+    <img src="buttons/addGreen.png" border="0">
+</a><br>
+
+<script type="text/javascript">
+    function addBlue(){
+        $.get("addBlue.php");
+        return false;
+    }
+</script>
+<a href="javascript:refresh();" onclick="addBlue();">
+    <img src="buttons/addBlue.png" border="0">
+</a><br>
+
+</div>
+
+<?php
+	$status = fopen("status.txt", "r");
+	echo fgets($status);
+	fclose($status);
+?>
+
+<div class="status">
+	<iframe src="status.html" height="200" width="500" frameborder="0"></iframe>
+</div>	
+
+</body>
+</html>
